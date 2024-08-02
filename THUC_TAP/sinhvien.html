@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý KTX - Sinh viên</title>
+    <link href="Setup_sinhvien/sinhvien.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản lý KTX</h2>
+        <ul>
+            <li><a href="#">Quản lý thông tin cá nhân</a></li>
+            <li><a href="#">Quản lý hóa đơn phòng ở</a></li>
+            <li><a href="#">Quản lý thông tin phòng ở</a></li>
+            <li><a href="#">Danh sách phòng trống</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Danh Sách Các Phòng Hiện Có</h1>
+        <button class="add-btn">+ Thêm mới</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên phòng</th>
+                    <th>Số giường</th>
+                    <th>Tầng</th>
+                    <th>Số người</th>
+                    <th>Tình trạng</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dữ liệu sẽ được thêm vào đây thông qua JavaScript -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button>&lt;&lt; Trước</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Sau &gt;&gt;</button>
+        </div>
+    </div>
+
+
+    <!-- Modal Structure -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Room details will be injected here -->
+            </div>
+        </div>
+    </div>
+    <script src="Setup_sinhvien/sinhvien.js"></script>
+</body>
+</html>

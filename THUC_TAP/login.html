@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập và Đăng ký KTX</title>
+    <link href="Setup_login/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="loginForm" class="form">
+                <h2>Đăng nhập</h2>
+                <input type="text" placeholder="Tài khoản" id="username" required>
+                <input type="password" placeholder="Mật khẩu" id="password" required>
+                <button type="submit" id="loginButton">Đăng nhập</button>
+                <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký</a></p>
+            </form>
+
+            <form id="registerForm" class="form hidden">
+                <script src="Setup_login/code.js"></script>
+                <h2>Đăng ký</h2>
+                <input type="text" placeholder="Tài khoản" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Mật khẩu" required>
+                <button type="submit">Đăng ký</button>
+                <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="Setup_login/code.js"></script> 
+</body>
+</html>
