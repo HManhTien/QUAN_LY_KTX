@@ -4,100 +4,173 @@
     margin: 0;
     height: 100vh;
 }
-
+/* Định dạng thanh bên */
 .sidebar {
-    width: 200px;
+    width: 230px;
     background-color: #343a40;
     color: white;
     padding: 20px;
     box-sizing: border-box;
 }
 
+    /* Định dạng tiêu đề trong thanh bên */
     .sidebar h2 {
         text-align: center;
         margin-bottom: 20px;
+        font-size: 18px; /* Tăng kích thước chữ tiêu đề */
+        border-bottom: 2px solid #495057; /* Đường kẻ dưới tiêu đề */
+        padding-bottom: 20px; /* Khoảng cách giữa chữ và đường kẻ dưới */
     }
 
+    /* Định dạng danh sách liên kết trong thanh bên */
     .sidebar ul {
         list-style-type: none;
         padding: 0;
+        margin: 0;
     }
 
+        /* Định dạng từng mục trong danh sách */
         .sidebar ul li {
             margin-bottom: 10px;
         }
 
+            /* Định dạng các liên kết */
             .sidebar ul li a {
                 color: white;
                 text-decoration: none;
                 display: block;
                 padding: 10px;
                 border-radius: 5px;
-                transition: background 0.3s;
+                transition: background 0.3s, color 0.3s; /* Hiệu ứng chuyển đổi */
             }
 
+                /* Định dạng khi hover trên các liên kết */
                 .sidebar ul li a:hover {
                     background-color: #495057;
+                    color: #cfcfcf; /* Thay đổi màu chữ khi hover */
                 }
+
+                /* Định dạng liên kết được chọn hoặc hoạt động */
+                .sidebar ul li a.active {
+                    background-color: #007bff; /* Màu nền cho liên kết đang hoạt động */
+                    color: white; /* Màu chữ cho liên kết đang hoạt động */
+                }
+
+/* Định dạng vùng chứa tiêu đề và form */
+.header-and-filter {
+    background-color: #e9ecef; /* Màu nền riêng cho vùng chứa */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Khoảng cách dưới cùng để phân biệt với bảng và phân trang */
+}
+
+    /* Định dạng tiêu đề h1 */
+    .header-and-filter h1 {
+        font-size: 24px; /* Kích thước chữ tiêu đề */
+        color: #007bff; /* Màu chữ nổi bật */
+        margin: 0 0 15px 0; /* Khoảng cách dưới cùng để tách tiêu đề với form */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Đổ bóng nhẹ để làm tiêu đề nổi bật */
+    }
 
 .main-content {
     flex: 1;
-    padding: 20px;
     box-sizing: border-box;
 }
 
     .main-content h1 {
         margin-top: 0;
     }
-
-.add-btn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-    .add-btn:hover {
-        background-color: #218838;
-    }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #dee2e6;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #f8f9fa;
+.data-view {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .pagination {
+    position: absolute; /* Sử dụng absolute để phân trang nằm trong phần chứa chính */
+    bottom: 20px; /* Cách đáy phần chứa chính một khoảng cách */
+    left: 0; /* Căn chỉnh sang trái của phần chứa chính */
+    right: 0; /* Căn chỉnh sang phải của phần chứa chính */
+    background-color: transparent; /* Không có màu nền */
+    padding: 10px;
+    text-align: center;
+    box-shadow: none; /* Xóa bỏ đổ bóng nếu không cần */
+    z-index: 1000; /* Đảm bảo phân trang nằm trên các phần tử khác */
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: center; /* Căn giữa phân trang */
 }
 
+    /* Định dạng cho nút phân trang */
     .pagination button {
-        background-color: #007bff;
-        color: white;
+        margin: 0 7px; /* Khoảng cách giữa các nút */
+        padding: 10px 15px;
+        background-color: #4CAF50; /* Màu nền nút */
+        color: white; /* Màu chữ */
         border: none;
-        padding: 10px 20px;
-        margin: 0 5px;
+        border-radius: 3px;
         cursor: pointer;
-        border-radius: 5px;
     }
 
         .pagination button:hover {
-            background-color: #0056b3;
+            background-color: #45a049; /* Màu nền khi hover */
         }
+
+        .pagination button.active {
+            background-color: #4CAF50; /* Màu nền cho nút active */
+            color: white;
+            font-weight: bold;
+        }
+/* Định dạng form */
+#filter-form {
+    text-align: center; /* Căn giữa toàn bộ form */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+    /* Định dạng từng nhóm nhãn và trường */
+    #filter-form .form-item {
+        display: flex; /* Sử dụng Flexbox để căn chỉnh label và input */
+        flex-direction: row; /* Đặt label và input ngang hàng */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        gap: 10px; /* Khoảng cách giữa label và input */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+    }
+
+    /* Định dạng label để căn giữa với ô input */
+    #filter-form label {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0; /* Xóa margin để căn giữa */
+        line-height: 1.5; /* Căn chỉnh chiều cao dòng */
+    }
+
+    /* Định dạng ô input và select */
+    #filter-form input[type="text"],
+    #filter-form select {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        height: 30px; /* Đặt chiều cao cố định cho ô input */
+        box-sizing: border-box; /* Bao gồm padding và border trong kích thước tổng cộng */
+    }
+
+/* Định dạng nút Lọc */
+.filter-btn {
+    height: 40px;
+    padding: 5px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    .filter-btn:hover {
+        background-color: #45a049;
+    }
